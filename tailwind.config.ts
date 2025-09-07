@@ -57,6 +57,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Game-specific colors
+        game: {
+          bg: "hsl(var(--game-bg))",
+          car: {
+            blue: "hsl(var(--car-blue))",
+            green: "hsl(var(--car-green))",
+          },
+          track: "hsl(var(--track-color))",
+          finish: "hsl(var(--finish-line))",
+          correct: "hsl(var(--correct-text))",
+          error: "hsl(var(--error-text))",
+          shadow: "hsl(var(--shadow))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +93,82 @@ export default {
             height: "0",
           },
         },
+        "bounce-in": {
+          "0%": {
+            transform: "scale(0.3)",
+            opacity: "0",
+          },
+          "50%": {
+            transform: "scale(1.05)",
+          },
+          "70%": {
+            transform: "scale(0.9)",
+          },
+          "100%": {
+            transform: "scale(1)",
+            opacity: "1",
+          },
+        },
+        "slide-up": {
+          from: {
+            transform: "translateY(20px)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
+        wiggle: {
+          "0%, 7%": {
+            transform: "rotateZ(0)",
+          },
+          "15%": {
+            transform: "rotateZ(-15deg)",
+          },
+          "20%": {
+            transform: "rotateZ(10deg)",
+          },
+          "25%": {
+            transform: "rotateZ(-10deg)",
+          },
+          "30%": {
+            transform: "rotateZ(6deg)",
+          },
+          "35%": {
+            transform: "rotateZ(-4deg)",
+          },
+          "40%, 100%": {
+            transform: "rotateZ(0)",
+          },
+        },
+        "car-drive": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-2px)",
+          },
+        },
+        "particle-float": {
+          "0%": {
+            transform: "translateY(0) scale(1)",
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translateY(-50px) scale(0)",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "bounce-in": "bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "slide-up": "slide-up 0.4s ease-out",
+        "wiggle": "wiggle 0.5s ease-in-out",
+        "car-drive": "car-drive 1s ease-in-out infinite",
+        "particle-float": "particle-float 2s ease-out forwards",
       },
     },
   },
