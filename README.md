@@ -1,73 +1,122 @@
-# Welcome to your Lovable project
+# 🏁 Typing Racer Game
 
-## Project info
+A cute and loveable typing game featuring chibi cars, pastel colors, and smooth animations. Race against time by typing words that move across the screen!
 
-**URL**: https://lovable.dev/projects/1daff6dc-54d5-4519-94a1-6385b17ee5eb
+## Features
 
-## How can I edit this code?
+- 🚗 **Adorable chibi-style cars** drawn with simple shapes
+- 🎨 **Pastel color palette** for a friendly, welcoming feel  
+- ⚡ **Dynamic word movement** from corner to corner
+- 🏆 **Local leaderboard** with persistent high scores
+- 🎵 **Cute sound effects** for typing and completion
+- ✨ **Particle confetti** when you win
+- 📊 **Real-time stats**: WPM, accuracy, score tracking
+- 🎮 **Multiple difficulty levels**: Easy, Normal, Hard, Endless
+- ⚙️ **Customizable settings**: volume, colors, accessibility options
+- 🎯 **Tutorial mode** to learn the game
 
-There are several ways of editing your application.
+## How to Run
 
-**Use Lovable**
+### Prerequisites
+- Python 3.9 or higher
+- pip (Python package installer)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1daff6dc-54d5-4519-94a1-6385b17ee5eb) and start prompting.
+### Installation & Startup
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+**Windows:**
+```cmd
+pip install -r requirements.txt
+python main.py
 ```
 
-**Edit a file directly in GitHub**
+**macOS/Linux:**
+```bash
+pip install -r requirements.txt
+python3 main.py
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**Using convenience scripts:**
+```bash
+# Unix/macOS
+./run.sh
 
-**Use GitHub Codespaces**
+# Windows  
+run.bat
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## How to Play
 
-## What technologies are used for this project?
+1. **Start**: Choose "Play" from the main menu
+2. **Type**: Words will appear and move across the screen
+3. **Race**: Type each word completely before it reaches the edge
+4. **Progress**: Your car moves forward as you type correctly
+5. **Win**: Reach the finish line before time runs out!
 
-This project is built with:
+### Controls
+- **Type letters** to match the current word
+- **Backspace** to correct mistakes
+- **Enter** to confirm word (optional)
+- **ESC** to pause/return to menu
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Scoring
+- **Accuracy**: Percentage of correctly typed characters
+- **WPM**: Standard words per minute calculation  
+- **Combo**: Consecutive correct words multiply your score
+- **Bonus**: Completing words gives speed boosts
 
-## How can I deploy this project?
+## Game Modes
 
-Simply open [Lovable](https://lovable.dev/projects/1daff6dc-54d5-4519-94a1-6385b17ee5eb) and click on Share -> Publish.
+- **Easy**: Slower words, shorter distance, common vocabulary
+- **Normal**: Balanced gameplay for casual players
+- **Hard**: Fast words, longer distance, challenging vocabulary  
+- **Endless**: Keep typing until you can't keep up!
 
-## Can I connect a custom domain to my Lovable project?
+## Technical Details
 
-Yes, you can!
+### Architecture
+The game uses a modular design with separate components:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- `game.py` - Main game loop and state management
+- `ui.py` - User interface and menu systems  
+- `car.py` - Car animation and movement logic
+- `words.py` - Word generation and movement
+- `particles.py` - Visual effects and animations
+- `audio.py` - Sound effect management
+- `assets.py` - Procedural graphics and embedded assets
+- `leaderboard.py` - Score persistence  
+- `settings.py` - Configuration management
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Asset Generation
+All graphics and sounds are generated procedurally at runtime - no external files needed! The `assets.py` module creates:
+
+- Chibi car graphics using pygame shapes
+- Pastel UI elements with rounded corners
+- Sound effects using mathematical waveforms
+- Particle effects for celebrations
+
+### Data Persistence
+Game data is stored locally in JSON files:
+- `data/settings.json` - User preferences
+- `data/leaderboard.json` - High scores
+
+## Building Executable
+
+See `BUILD_NOTES.md` for instructions on creating standalone executables with PyInstaller.
+
+## License
+
+MIT License - see `LICENSE` file for details.
+
+## Development
+
+### Running Tests
+```bash
+python tests/smoke_test.py
+```
+
+### Code Structure
+The codebase follows clean architecture principles with clear separation of concerns, comprehensive docstrings, and type hints where appropriate.
+
+---
+
+Made with 💖 for typing enthusiasts everywhere!
